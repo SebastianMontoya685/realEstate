@@ -9,7 +9,6 @@
     "db:generate": "prisma migrate dev",
     "db:migrate": "prisma migrate deploy",
     "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
@@ -19,10 +18,9 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
-  },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
+    "typecheck": "tsc --noEmit",
+    "ai:test": "npx tsx scripts/test-ai-comment.ts",
+    "ai:demo": "npx tsx scripts/test-ai-comment.ts --demo"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.2",
@@ -32,21 +30,19 @@
     "@trpc/client": "^11.0.0",
     "@trpc/react-query": "^11.0.0",
     "@trpc/server": "^11.0.0",
-    "leaflet": "^1.9.4",
+    "dotenv": "^17.2.3",
     "next": "^15.2.3",
     "next-auth": "5.0.0-beta.25",
+    "openai": "^6.15.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-leaflet": "^5.0.0",
     "server-only": "^0.0.1",
     "superjson": "^2.2.1",
-    "tsx": "^4.21.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.0.15",
-    "@types/leaflet": "^1.9.21",
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
